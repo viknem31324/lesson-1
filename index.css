@@ -5,26 +5,28 @@
 }
 
 @font-face {
-  font-family: 'WorkSans-Regular';
-  src: url('./fonts/WorkSans-Regular.woff');
+  font-family: "WorkSans-Regular";
+  src: url("./fonts/WorkSans-Regular.woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'WorkSans-SemiBold';
-  src: url('./fonts/WorkSans-SemiBold.woff');
+  font-family: "WorkSans-SemiBold";
+  src: url("./fonts/WorkSans-SemiBold.woff");
   font-style: normal;
   font-weight: 600;
 }
 
 body {
-  font-family: 'WorkSans-Regular';
+  font-family: "WorkSans-Regular";
   background-color: var(--black);
 }
 
 .container {
   margin: 0 auto;
+  padding: 70px 115px;
+  max-width: 1050px;
 }
 
 .section {
@@ -35,17 +37,17 @@ body {
 
 .section__text {
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 49px;
   display: flex;
   flex-direction: column;
   justify-content: start;
 }
 
 .section__title {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 600;
-  font-family: 'WorkSans-SemiBold';
-  font-size: 28px;
+  font-family: "WorkSans-SemiBold";
+  font-size: 38px;
   line-height: 140%;
   color: var(--white);
 }
@@ -53,7 +55,7 @@ body {
 .section__description {
   margin: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 140%;
   color: var(--white);
 }
@@ -62,16 +64,16 @@ body {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
+  gap: 30px;
 }
 
 .card {
-  padding: 20px;
+  padding: 8px 30px 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
   background: var(--grey);
   color: var(--white);
   border-radius: 20px;
@@ -79,88 +81,116 @@ body {
 
 .card__img {
   width: 100%;
+  margin-bottom: 3px;
 }
 
 .card__text {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center;
+  align-items: center;
 }
 
 .card__title {
-  margin: 0 0 10px;
+  margin: 0 0 9px;
+  text-align: center;
   font-weight: 600;
-  font-family: 'WorkSans-SemiBold';
-  font-size: 16px;
+  font-family: "WorkSans-SemiBold";
+  font-size: 22px;
   line-height: 140%;
 }
 
 .card__description {
+  text-align: center;
   margin: 0;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 140%;
 }
 
-@media (min-width: 834px) {
+@media (max-width: 1200px) {
   .container {
-    padding: 0 72px;
+    padding: 32px 64px;
   }
-
-  .section__list {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: min-content;
-    gap: 30px;
-  }
-
-  .card {
-    padding: 30px;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr;
-  }
-
-  .card__text {
-    align-items: center;
-  }
-
-  .card__title {
-    text-align: center;
-  }
-
-  .card__description {
-    text-align: center;
-  }
-}
-
-@media (min-width: 1270px) {
-  .container {
-    padding: 0 115px;
-    max-width: 1050px;
-  }
-
+  
   .section__text {
-    margin-bottom: 48px;
+    margin-bottom: 41px;
   }
   
   .section__title {
-    font-size: 38px;
+    margin: 0 0 8px;
+    font-size: 28px;
+    line-height: 140%;
   }
   
   .section__description {
-    font-size: 22px;
-    line-height: 160%;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  
+  .card {
+    padding: 8px 20px 20px;
   }
   
   .card__img {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
-
+  
+  .card__text {
+    margin-bottom: 10px;
+  }
+  
   .card__title {
-    font-size: 22px;
+    margin: 0 0 11px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  
+  .card__description {
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 29px;
   }
 
+  .section__title {
+    margin: 0 0 9px;
+  }
+  
+  .section__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    padding: 11px 20px 20px;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: min-content;
+    gap: 9px;
+  }
+  
+  .card__img {
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+  
+  .card__text {
+    padding-top: 8px;
+    margin-bottom: 0;
+    align-items: start;
+  }
+  
+  .card__title {
+    margin: 0 0 9px;
+    text-align: start;
+  }
+  
   .card__description {
-    font-size: 16px;
+    text-align: start;
   }
 }
